@@ -1,0 +1,62 @@
+### records 조회
+GET {{local_api}}/api/records?page=1&area=kr&season=2024 Season 2
+
+> {%
+    client.global.set('area', response.body.data[0].area.toLowerCase())
+    client.global.set('toon', response.body.data[0].toon)
+    client.log(client.global.get('area'));
+%}
+
+### records 세부 조회
+GET {{local_api}}/api/records/{{area}}/{{toon}}
+
+
+### records 검색
+GET {{local_api}}/api/records/search/{{area}}/{{toon}}
+
+### records 추가
+POST {{local_api}}/api/records
+Content-Type: application/json
+
+{
+  "items": [
+    {
+      "area": "KR",
+      "season": "2024 Season 2",
+      "rank": "5",
+      "last_rank": "2",
+      "gateway_id": 300,
+      "points": 3000,
+      "wins": 10,
+      "losses": 1,
+      "disconnects": 1,
+      "toon": "aaa",
+      "avatar": "aaa",
+      "feature_stat": "terran",
+      "rating": 2000,
+      "bucket": 7
+    },
+    {
+      "area": "KR",
+      "season": "2024 Season 2",
+      "rank": "2",
+      "last_rank": "2",
+      "gateway_id": 300,
+      "points": 1000,
+      "wins": 10,
+      "losses": 1,
+      "disconnects": 1,
+      "toon": "aaa",
+      "avatar": "aaa",
+      "feature_stat": "terran",
+      "rating": 2000,
+      "bucket": 7
+    }
+  ]
+}
+
+### records 갱신
+PUT {{local_api}}/api/records
+
+### records 총 개수
+GET {{local_api}}/api/records/count?season=2024 Season 2

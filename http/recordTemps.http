@@ -1,0 +1,22 @@
+### 테이블 비우기
+GET {{local_api}}/api/recordTemps/emptyTable
+
+
+### 예전 시즌 레코드 추가
+GET {{local_api}}/api/recordTemps/insertRecordOldSeasons
+
+
+### 새 시즌 레코드 추가
+GET {{local_api}}/api/recordTemps/insertRecordNewSeasons
+
+
+### 안쓰는 데이터 삭제
+GET {{local_api}}/api/recordTemps/destroyUnusedData
+
+
+### 테이블 swap
+GET {{local_api}}/api/recordTemps/replaceTable
+
+
+### 아바타 이미지 다운로드
+GET {{local_api}}/api/recordTemps/downAvatarImage

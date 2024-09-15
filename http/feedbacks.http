@@ -1,0 +1,13 @@
+### template 읽기
+GET {{local_api}}/api/feedbacks
+Content-Type: application/json
+
+### template 생성
+POST {{local_api}}/api/feedbacks
+Content-Type: application/json
+
+{
+    "email": "abcehr@gmail.com",
+    "phone": "01012345678",
+    "content": "어떤 어떤게 잘 안됩니다."
+}

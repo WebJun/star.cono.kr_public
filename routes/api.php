@@ -10,7 +10,7 @@ use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\Settings\PasswordController;
 use App\Http\Controllers\Settings\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers as Con;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -44,3 +44,48 @@ Route::group(['middleware' => 'guest:api'], function () {
     Route::post('oauth/{driver}', [OAuthController::class, 'redirect']);
     Route::get('oauth/{driver}/callback', [OAuthController::class, 'handleCallback'])->name('oauth.callback');
 });
+
+/* records */
+Route::get('records', [Con\RecordController::class, 'index']);
+Route::get('records/{area}/{toon}', [Con\RecordController::class, 'show']);
+Route::get('records/search/{area}/{toon}', [Con\RecordController::class, 'search']);
+Route::post('records', [Con\RecordController::class, 'store']);
+Route::put('records', [Con\RecordController::class, 'update']);
+Route::get('records/count', [Con\RecordController::class, 'count']);
+
+/* replies */
+Route::get('replies/migration', [Con\ReplyController::class, 'migration']);
+Route::get('replies/{area}/{toon}', [Con\ReplyController::class, 'index']);
+Route::post('replies', [Con\ReplyController::class, 'store']);
+Route::post('replies/{id}', [Con\ReplyController::class, 'destroy']);
+
+/* feedbacks */
+Route::get('feedbacks', [Con\FeedbackController::class, 'index']);
+Route::post('feedbacks', [Con\FeedbackController::class, 'store']);
+
+/* recordOldSeasons */
+Route::post('recordOldSeasons', [Con\RecordOldSeasonController::class, 'store']);
+
+/* recordNewSeasons */
+Route::post('recordNewSeasons', [Con\RecordNewSeasonController::class, 'store']);
+Route::delete('recordNewSeasons', [Con\RecordNewSeasonController::class, 'destroy']);
+Route::get('recordNewSeasons/count', [Con\RecordNewSeasonController::class, 'count']);
+
+/* recordTemps */
+Route::get('recordTemps/emptyTable', [Con\RecordTempController::class, 'emptyTable']);
+Route::get('recordTemps/insertRecordOldSeasons', [Con\RecordTempController::class, 'insertRecordOldSeasons']);
+Route::get('recordTemps/insertRecordNewSeasons', [Con\RecordTempController::class, 'insertRecordNewSeasons']);
+Route::get('recordTemps/destroyUnusedData', [Con\RecordTempController::class, 'destroyUnusedData']);
+Route::get('recordTemps/replaceTable', [Con\RecordTempController::class, 'replaceTable']);
+Route::get('recordTemps/downAvatarImage', [Con\RecordTempController::class, 'downAvatarImage']);
+
+/*
+Route::get('/statistics', [Con\StatisticsController::class, 'index']);
+Route::get('/statistics/ability_kind', [Con\StatisticsController::class, 'ability_kind']);
+Route::post('/statistics/numKind', [Con\StatisticsController::class, 'numKind']);
+Route::get('/statistics/ability-kind-ajax', [Con\StatisticsController::class, 'ability_kind_ajax']);
+*/
+Route::get('/statistics/numKind', [Con\StatisticsController::class, 'numKind']);
+Route::get('/statistics/ability-kind-ajax', [Con\StatisticsController::class, 'ability_kind_ajax']);
+
+

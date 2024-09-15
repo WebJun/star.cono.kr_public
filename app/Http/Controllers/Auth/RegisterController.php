@@ -8,6 +8,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use App\Http\Middleware\BlockIpMiddleware;
 
 class RegisterController extends Controller
 {
@@ -20,6 +21,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
+        $this->middleware(BlockIpMiddleware::class);
         $this->middleware('guest');
     }
 

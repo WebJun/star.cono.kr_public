@@ -1,0 +1,7 @@
+### 종족 빈도수(원형차트)
+GET {{local_api}}/api/statistics/numKind
+
+
+### 종족 빈도수(꺾은선 차트)
+GET {{local_api}}/api/statistics/ability-kind-ajax
+

@@ -14,3 +14,6 @@ yarn-error.log
 /dist
 /public/_nuxt
 *.code-workspace
+.git*
+Frontier League.zip
+record_old_seasons.zip

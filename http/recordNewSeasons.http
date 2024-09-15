@@ -1,0 +1,48 @@
+### recordNewSeasons 생성
+POST {{local_api}}/api/recordNewSeasons
+Content-Type: application/json
+
+{
+  "items": [
+    {
+      "area": "KR",
+      "season": "2024 Season 2",
+      "rank": "5",
+      "last_rank": "2",
+      "gateway_id": 300,
+      "points": 3000,
+      "wins": 10,
+      "losses": 1,
+      "disconnects": 1,
+      "toon": "aaa",
+      "avatar": "aaa",
+      "feature_stat": "terran",
+      "rating": 2000,
+      "bucket": 7
+    },
+    {
+      "area": "KR",
+      "season": "2024 Season 2",
+      "rank": "2",
+      "last_rank": "2",
+      "gateway_id": 300,
+      "points": 1000,
+      "wins": 10,
+      "losses": 1,
+      "disconnects": 1,
+      "toon": "aaa",
+      "avatar": "aaa",
+      "feature_stat": "terran",
+      "rating": 2000,
+      "bucket": 7
+    }
+  ]
+}
+
+### recordNewSeasons 삭제
+DELETE {{local_api}}/api/recordNewSeasons
+Content-Type: application/json
+
+### recordNewSeasons 총 개수
+GET {{local_api}}/api/recordNewSeasons/count
+Content-Type: application/json

@@ -13,7 +13,9 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'allowed_ips' => explode(',', env('ALLOWED_IPS', '')),
+
+    'name' => env('APP_NAME', 'Star'),
 
     /*
     |--------------------------------------------------------------------------
@@ -69,7 +71,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Seoul',
 
     /*
     |--------------------------------------------------------------------------
@@ -82,9 +84,10 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'ko',
 
     'locales' => [
+        'ko' => 'KO',
         'en' => 'EN',
         'es' => 'ES',
         'zh-CN' => '中文',
@@ -101,7 +104,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'ko',
 
     /*
     |--------------------------------------------------------------------------
@@ -182,6 +185,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        // App\Providers\LogProcessorServiceProvider::class,
 
     ],
 

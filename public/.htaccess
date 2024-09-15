@@ -19,3 +19,19 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 </IfModule>
+
+# 231022
+#  <Files *>
+#      Order Deny,Allow
+#      Deny from all
+#      allow from ${ALLOW_IP}
+#  </Files>
+
+# 231022
+# ErrorDocument 400 /error_404.php
+# ErrorDocument 401 /error_404.php
+# ErrorDocument 403 /error_404.php
+# ErrorDocument 404 /error_404.php
+# ErrorDocument 405 /error_404.php
+# ErrorDocument 500 /error_404.php
+# ErrorDocument 501 /error_404.php
