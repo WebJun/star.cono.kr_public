@@ -10,10 +10,17 @@ import {
   faGithub
 } from '@fortawesome/free-brands-svg-icons'
 
+import {
+  faChartPie, faChartLine,
+} from '@fortawesome/free-solid-svg-icons'
+
 config.autoAddCss = false
 
 library.add(
   faUser, faLock, faSignOutAlt, faCog, faGithub
+)
+library.add(
+    faChartPie, faChartLine,
 )
 
 Vue.component('Fa', FontAwesomeIcon)

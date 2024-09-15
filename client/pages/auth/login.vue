@@ -70,6 +70,10 @@ export default {
     return { title: this.$t('login') }
   },
 
+  created () {
+    document.body.style.backgroundColor = 'transparent'
+  },
+
   methods: {
     async login () {
       let data
@@ -92,7 +96,7 @@ export default {
       await this.$store.dispatch('auth/fetchUser')
 
       // Redirect home.
-      this.$router.push({ name: 'home' })
+      this.$router.push({ name: 'custom.admin.main' })
     }
   }
 }
